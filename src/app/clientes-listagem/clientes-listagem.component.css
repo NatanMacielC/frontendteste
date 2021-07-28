@@ -1,0 +1,83 @@
+
+
+
+table {
+    background: white;
+    border-collapse: separate;
+    margin: 20px;
+    height: 25px;
+    width: 40px; 
+    position: absolute; 
+    text-align: center;
+    margin-left: center;
+    margin-right: center;
+    
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .app-title {
+      background: #123456;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-bottom: 50px;
+  }
+  
+  .btn {
+      margin: 5px;
+  }
+
+  img{
+    width: 96x;
+    height: 37px;
+    position:fixed;
+    top: 1.8%;
+  }
+
+  header{
+    background: black;
+    width: 100%;
+    height: 50px;
+  }
+
+  .panel-heading{
+    font-size: 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    position: relative;
+    left:110%; 
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 1px;
+    padding: 1px;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    display: block;
+    color: gray;
+    text-align: left;
+    padding: 9.5px 12px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(71, 71, 71);
+    color: white;
+}

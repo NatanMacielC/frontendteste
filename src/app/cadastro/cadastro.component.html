@@ -1,0 +1,59 @@
+<header class="cabecalho">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/img/logo.png" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div>
+          <ul>
+            <li><a routerLink="listagem" routerLinkActive="active">Lista</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-5">
+  
+      <div class="panel panel-primary">
+        <div class="panel-body">
+  
+          <form autocomplete="off" [formGroup]="formCliente" (ngSubmit)="formCliente">
+            <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && fc.nome.errors }">
+              <label for="name">Nome</label>
+              <input type="text" class="form-control" id="name" formControlName="nome" required>
+              <span *ngIf="isSubmitted && fc.nome.errors" class="help-block">Este campo é obrigatório</span>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && fc.razaoSocial.errors }">
+              <label for="razaoSocial">Razão Social</label>
+              <input type="text" class="form-control" id="razaoSocial" formControlName="razaoSocial" required>
+              <span *ngIf="isSubmitted && fc.razaoSocial.errors" class="help-block">Este campo é obrigatório</span>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && fc.cnpj.errors }">
+              <label for="cnpj">CPF ou CNPJ</label>
+              <input type="text" class="form-control" id="cnpj" formControlName="cnpj" required>
+              <span *ngIf="isSubmitted && fc.cnpj.errors" class="help-block">Este campo é obrigatório</span>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && fc.email.errors }">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" formControlName="email" required>
+              <span *ngIf="isSubmitted && fc.email.errors" class="help-block">Este campo é obrigatório</span>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && fc.telefone.errors }">
+              <label for="telefone">Telefone</label>
+              <input type="text" class="form-control" id="telefone" formControlName="telefone" required>
+              <span *ngIf="isSubmitted && fc.telefone.errors" class="help-block">Este campo é obrigatório</span>
+            </div>
+            <button type="button" class="btn btn-success send" (click)="save()">Enviar</button>
+            <button type="button" class="btn btn-danger clean" (click)="cleanForm()">Limpar</button>
+          </form>
+  
+        </div>
+    </div>
+    </div>
+  </div>

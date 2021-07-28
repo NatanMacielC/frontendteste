@@ -1,0 +1,67 @@
+<header class="cabecalho">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../assets/img/logo.png" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div>
+        <ul>
+          <li><a routerLink="" routerLinkActive="active">Cadastro</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+</header>
+<div class="row">
+  <div class="col-md-offset-1 col-md-5">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <form autocomplete="off" [formGroup]="formCliente" (ngSubmit)="formCliente">
+          <div class="form-group" [ngClass]="{ 'has-error': isSubmitted && fc.nome.errors }">
+            <span *ngIf="isSubmitted && fc.nome.errors" class="help-block">Coloque o nome!</span>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="col-md-5">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Lista de Clientes</div>
+    <div class="panel-body">
+
+      <table style="width: 100%;">
+        <tr>
+          <th>Nome</th>
+          <th>Razão Social</th>
+          <th>CPF ou CNPJ</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Ação</th>
+        </tr>
+        <tr *ngFor="let clientes of clientesList">
+          <td>{{ clientes.nome }}</td>
+          <td>{{ clientes.razaoSocial }}</td>
+          <td>{{ clientes.cnpjl }}</td>
+          <td>{{ clientes.email }}</td>
+          <td>{{ clientes.telefone }}</td>
+          <td>
+            <button (click)="delete(clientes.id)" class="btn btn-sm btn-danger" [disabled]="clientes.isDeleting">
+              <span>Excluir</span>
+            </button>
+          </td>
+      </table>
+    </div>
+  </div>
+</div>
