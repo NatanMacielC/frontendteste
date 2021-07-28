@@ -11,7 +11,7 @@ import { ClientesService } from '../clientes.service';
 export class ClientesListagemComponent implements OnInit {
 
   title = 'clientes';
-  baseURL = '/api/clientes';
+  baseURL = '/api/todoitems';
   formCliente!: FormGroup;
   isSubmitted!: boolean;
   clientesList: any;
@@ -26,7 +26,7 @@ export class ClientesListagemComponent implements OnInit {
     this.initForm();
     this.formCliente = this.fb.group({
       id: [0],
-      nome: ['', Validators.required],
+      name: ['', Validators.required],
       cnpj: ['', Validators.required],
       email: ['', Validators.required],
       telefone: ['', Validators.required],
@@ -39,7 +39,7 @@ export class ClientesListagemComponent implements OnInit {
   get fc() { return this.formCliente.controls; }
 
   initForm() {
-    this.formCliente = this.fb.group({id: '', nome: ['', Validators.required ], cnpj: ['', Validators.required],
+    this.formCliente = this.fb.group({id: '', name: ['', Validators.required ], cnpj: ['', Validators.required],
     email: ['', Validators.required],
     telefone: ['', Validators.required],
     razaoSocial: ['', Validators.required]})
@@ -113,6 +113,7 @@ export class ClientesListagemComponent implements OnInit {
         alert('Removido com sucesso');
       });
       this.getAll();
+      this.reset();
     }
   }
 

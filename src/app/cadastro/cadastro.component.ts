@@ -16,11 +16,12 @@ import { TextMaskModule } from 'angular2-text-mask';
 export class CadastroComponent implements OnInit {
   
   title = 'clientes';
-  baseURL = '/api/clientes';
+  baseURL = '/api/todoitems';
   formCliente!: FormGroup;
   isSubmitted!: boolean;
   clientesList: any;
   clientes: any;
+  id = '';
 
   constructor(private clientesService : ClientesService, 
     private http: HttpClient, 
@@ -30,13 +31,11 @@ export class CadastroComponent implements OnInit {
       this.getAll();
       this.initForm();
       this.formCliente = this.fb.group({
-        id: [0],
-        nome: ['', Validators.required],
+        name: ['', Validators.required],
         cnpj: ['', Validators.required],
         email: ['', Validators.required],
         telefone: ['', Validators.required],
-        razaoSocial: ['', Validators.required],
-        is_active: [1],
+        razaoSocial: ['', Validators.required]
       });
       this.getAll();
     }
@@ -44,7 +43,7 @@ export class CadastroComponent implements OnInit {
     get fc() { return this.formCliente.controls; }
   
     initForm() {
-      this.formCliente = this.fb.group({id: '', nome: ['', Validators.required ], cnpj: ['', Validators.required],
+      this.formCliente = this.fb.group({name: ['', Validators.required ], cnpj: ['', Validators.required],
       email: ['', Validators.required],
       telefone: ['', Validators.required],
       razaoSocial: ['', Validators.required]})
@@ -55,7 +54,7 @@ export class CadastroComponent implements OnInit {
     if (this.formCliente.invalid) {
       return;
     } else{
-      let id = this.formCliente.controls.id.value;
+      let id = this.formCliente.controls.id;
       if(!id) {
         this.http.post(this.baseURL, this.formCliente.value).subscribe(() => {
           alert('Criado com sucesso');

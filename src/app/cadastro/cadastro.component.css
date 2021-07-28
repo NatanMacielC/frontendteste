@@ -12,7 +12,7 @@ img{
   }
 
   .panel-body{
-    font-size: 10px;
+    font-size: 15px;
     line-height: 0.5rem;
     position:fixed;
 		left:45%;
@@ -55,23 +55,16 @@ li a:hover {
 }
 
 .send {
-  padding: .175rem .35rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: .05rem;
-}
-
-.send {
-  padding: .05rem .2rem;
-    font-size: 0.7rem;
-    line-height: 1.5;
-    border-radius: .03rem;
+  padding: .07rem .3rem;
+    font-size: 1rem;
+    line-height: 2;
+    border-radius: .05rem;
 }
 
 .clean {
-    padding: .05rem .2rem;
-    font-size: 0.7rem;
-    line-height: 1.5;
-    border-radius: .03rem;
-  }
+  padding: .07rem .3rem;
+    font-size: 1rem;
+    line-height: 2;
+    border-radius: .05rem;
+}
 

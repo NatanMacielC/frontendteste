@@ -9,7 +9,7 @@ import { Clientes } from './nomes/clientes';
 })
 export class ClientesService {
 
-  contatosUrl = "/api/clientes";
+  contatosUrl = '/api/todoitems'
 
   constructor(private http: HttpClient) {}
 

@@ -15,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
 
   title = 'clientes';
-  baseURL = '/api/clientes';
+  baseURL = '/api/todoitems';
   formCliente!: FormGroup;
   isSubmitted!: boolean;
   clientesList: any;
